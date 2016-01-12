@@ -1,2 +1,2 @@
-# spark-rdd-dataframe-dataset
-Spark example code demonstrating RDD, DataFrame and DataSet APIs.
+# spark-sql-dataframe-udt
+Demonstration of using Spark SQL with custom UDT
