@@ -17,10 +17,16 @@ object ScalaDataSetExample {
 
     val sqlContext = new SQLContext(sc)
 
-//    val dataset = sqlContext.createDataset(ScalaData.sampleData())
-//
-//    // example tranformation
-//    val df2 = dataset.filter(p => p.state == "CO")
+    //TODO: not working yet
+    /*
+    val dataset = sqlContext.createDataset(ScalaData.sampleData())
+
+    // example transformation
+
+    dataset.filter(p => p.age < 21)
+      .collect
+      .foreach(println(_))
+    */
 
   }
 

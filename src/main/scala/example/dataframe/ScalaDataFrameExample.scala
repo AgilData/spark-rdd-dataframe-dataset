@@ -20,9 +20,17 @@ object ScalaDataFrameExample {
 
     // example transformations
 
-    val df2 = df.filter("age < 21")
+    // SQL style
+    println("Under 21")
+    df.filter("age < 21")
+      .collect
+      .foreach(row => println(row))
 
-    val df3 = df.filter(df.col("age").gt(21))
+    // expression builder style
+    println("Over 21")
+    df.filter(df.col("age").gt(21))
+      .collect
+      .foreach(row => println(row))
 
 
   }

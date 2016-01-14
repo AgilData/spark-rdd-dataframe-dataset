@@ -28,13 +28,17 @@ public class JavaDataFrameExample {
 
         // SQL style
         System.out.println("Under 21");
-        DataFrame df2 = df.filter("age < 21");
-        df2.collectAsList().stream().forEach(System.out::println);
+        df.filter("age < 21")
+            .collectAsList()
+            .stream().
+            forEach(System.out::println);
 
         // Expression builder style
         System.out.println("Over 21");
-        DataFrame df3 = df.filter(df.col("age").gt(21));
-        df3.collectAsList().stream().forEach(System.out::println);
+        df.filter(df.col("age").gt(21))
+            .collectAsList()
+            .stream()
+            .forEach(System.out::println);
 
 
 
