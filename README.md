@@ -1,2 +1,3 @@
-# spark-sql-dataframe-udt
-Demonstration of using Spark SQL with custom UDT
+# spark-rdd-dataframe-dataset
+
+This repo contains code samples in both Java and Scala for dealing with the RDD, DataFrame, and Dataset APIs and highlights the differences in approach between these APIs.
