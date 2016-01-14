@@ -1,6 +1,5 @@
 package example.rdd
 
-import org.apache.spark.sql.{Row, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}
 
 import example.common.ScalaData
@@ -18,8 +17,15 @@ object ScalaRDDExample {
     // load initial RDD
     val rdd = sc.parallelize(ScalaData.sampleData())
 
-    // example tranformation
-    rdd.filter(p => p.age == "CO")
+    // example transformations
+
+    // verbose syntax
+    println("Under 21")
+    rdd.filter(p => p.age < 21).foreach(println(_))
+
+    // concise syntax
+    println("Over 21")
+    rdd.filter(_.age > 21).foreach(println(_))
 
   }
 
