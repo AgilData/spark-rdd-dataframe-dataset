@@ -2,7 +2,7 @@ package example.dataset
 
 import example.common.ScalaData
 import org.apache.spark.sql.SQLContext
-import org.apache.spark.sql.SQLContext._
+
 import org.apache.spark.{SparkConf, SparkContext}
 
 object ScalaDataSetExample {
@@ -17,8 +17,8 @@ object ScalaDataSetExample {
 
     val sqlContext = new SQLContext(sc)
 
-    //TODO: not working yet
-    /*
+    import sqlContext.implicits._
+
     val dataset = sqlContext.createDataset(ScalaData.sampleData())
 
     // example transformation
@@ -26,7 +26,6 @@ object ScalaDataSetExample {
     dataset.filter(p => p.age < 21)
       .collect
       .foreach(println(_))
-    */
 
   }
 

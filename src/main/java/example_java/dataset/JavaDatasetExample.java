@@ -10,6 +10,8 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.SQLContext;
 
+import java.util.List;
+
 public class JavaDatasetExample {
 
     public static void main(String[] args) throws Exception {
@@ -22,8 +24,10 @@ public class JavaDatasetExample {
 
         SQLContext sqlContext = new SQLContext(sc);
 
+        List<JavaPerson> data = JavaData.sampleData();
+
         //NOTE: this does not actually work ... throws error "no encoder found for example_java.common.JavaPerson"
-        Dataset<JavaPerson> dataset = sqlContext.createDataset(JavaData.sampleData(), Encoders.bean(JavaPerson.class));
+        Dataset<JavaPerson> dataset = sqlContext.createDataset(data, Encoders.bean(JavaPerson.class));
 
         Dataset<JavaPerson> below21 = dataset.filter((FilterFunction<JavaPerson>) person -> (person.getAge() < 21));
 
