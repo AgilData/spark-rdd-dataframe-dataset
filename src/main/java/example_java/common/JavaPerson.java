@@ -9,6 +9,9 @@ public class JavaPerson implements Serializable {
     int age;
     String state;
 
+    public JavaPerson() {
+    }
+
     public JavaPerson(String first, String last, int age, String state) {
         this.first = first;
         this.last = last;
@@ -30,6 +33,22 @@ public class JavaPerson implements Serializable {
 
     public String getState() {
         return state;
+    }
+
+    public void setFirst(String first) {
+        this.first = first;
+    }
+
+    public void setLast(String last) {
+        this.last = last;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     @Override
